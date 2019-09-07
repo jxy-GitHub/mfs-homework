@@ -1,6 +1,6 @@
-#Visual Studio Code 常用功能说明
+# Visual Studio Code 常用功能说明
 ---
-##快捷键说明
+## 快捷键说明
 **按键**|**功能**
 :--:|:--:
 Ctrl + Shift + P，F1|显示命令面板 Show Command Palette
