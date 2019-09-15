@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <title>CSS边框</title>
+
+    <style>
+
+        .triangleTop{
+
+            margin: 30px;
+
+            height: 0px;
+
+            width: 0px;
+
+            border-top: solid 100px rgba(255, 0, 0, 0);
+
+            border-left: solid 100px rgba(0, 255, 0, 0);
+
+            border-right: solid 100px rgba(0, 0, 255, 0);
+
+            border-bottom: solid 100px black;
+
+        }
+
+        .triangleLeft{
+
+            margin: 30px;
+
+            height: 0px;
+
+            width: 0px;
+
+            border-top: solid 100px rgba(255, 0, 0, 0);
+
+            border-left: solid 100px rgba(0, 255, 0, 0);
+
+            border-right: solid 100px rgb(0, 0, 255);
+
+            border-bottom: solid 100px rgba(255, 255, 255, 0);
+
+        }
+
+        .triangleRight{
+
+            margin: 30px;
+
+            height: 0px;
+
+            width: 0px;
+
+            border-top: solid 100px rgba(255, 0, 0, 0);
+
+            border-left: solid 100px rgb(0, 255, 0);
+
+            border-right: solid 100px rgba(0, 0, 255, 0);
+
+            border-bottom: solid 100px rgba(255, 255, 255, 0);
+
+        }
+
+        .triangleBottom{
+
+            margin: 30px;
+
+            height: 0px;
+
+            width: 0px;
+
+            border-top: solid 100px rgb(255, 0, 0);
+
+            border-left: solid 100px rgba(0, 255, 0, 0);
+
+            border-right: solid 100px rgba(0, 0, 255, 0);
+
+            border-bottom: solid 100px rgba(255, 255, 255, 0);
+
+        }
+
+        .RegularTriangle{
+
+            width: 0;
+
+            height: 0;
+
+            border-bottom: 139px solid #fcf921;
+
+            border-left: 80px solid transparent;
+
+            border-right: 80px solid transparent;
+
+        }
+
+        .RightAngleTrapezoid{
+
+            margin: 30px;
+
+            height: 0px;
+
+            width: 80px;
+
+            border-top: solid 100px rgba(255, 0, 0, 0);
+
+            border-right: solid 50px rgba(0, 128, 0, 0);
+
+            border-bottom: solid 100px blue;
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <div>
+
+        <div class="triangleTop"></div>
+
+        <div class="triangleLeft"></div>
+
+        <div class="triangleRight"></div>
+
+        <div class="triangleBottom"></div>
+
+        <div class="RegularTriangle"></div>
+
+        <div class="RightAngleTrapezoid"></div>
+
+    </div>
+
+</body>
+
+</html>
