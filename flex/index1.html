@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>圣杯布局</title>
+        <style>
+            #container{
+                display: flex;
+                justify-content: space-between;
+            }
+            #head{
+                background-color: lightgray;
+                text-align: center;
+            }
+            #foot{
+                background-color: lightgray;
+                text-align: center;
+            }
+            #left{
+                background-color: darkcyan;
+                flex-basis:200px;
+                order:-1;
+                text-align: center;
+            }
+            #right{
+                background-color: darkcyan;
+                flex-basis:200px;
+                order:1;
+                text-align: center;
+            }
+            #center{
+                background-color:deepskyblue;
+                flex-grow: 1;
+                order:0;
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+            <div id="head">头部</div>
+            <div id="container">
+                <div id="center">主内容栏自适应宽度</div>
+                <div id="left">侧边栏1固定宽度</div>
+                <div id="right">侧边栏2固定宽度</div>
+            </div>
+            <div id="foot">底部</div>
+        </div>
+    </body>
+</html>

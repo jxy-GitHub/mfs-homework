@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>骰子</title>
+        <style>
+        *{
+            margin:0;
+            padding: 0;
+        }
+        .surface{
+            width:90px;
+            height: 90px;
+            border:1px solid black;
+            border-radius: 5px;
+            background-color: bisque;
+            margin-top: 30px;
+            margin-left: 30px;
+        }
+        .dot{
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            background-color: black;
+            margin:5px;
+            border-radius: 2rem;
+        }
+        #one{
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: center;
+            align-items: center;
+        }
+        #two{
+            display: flex;
+            justify-content: space-between;
+        }
+        #two :nth-child(2){
+            align-self: flex-end;
+        }
+        #three {
+            display: flex;
+            justify-content: space-between;
+        }
+        #three :nth-child(2) {
+            align-self: center;
+        }
+        #three :nth-child(3) {
+            align-self: flex-end;
+        }
+        #four{
+            display: flex;
+            align-content: space-between;
+            flex-flow: row wrap;
+        }
+        .column{
+            display: flex;
+            width: 90px;
+            height: 30px;
+            justify-content: space-between;
+        }
+        #five{
+            display: flex;
+            flex-flow: row wrap;
+            align-content: space-between;
+        }
+        #five .column:nth-of-type(2){
+            justify-content: center;
+        }
+        #six{
+            display: flex;
+            flex-flow: row wrap;
+            align-content: space-between;
+        }
+        </style>
+    </head>
+    <body>
+        <div style="display: flex;flex-flow: row wrap">
+            <div id="one" class="surface">
+                <p class="dot"></p>
+            </div>
+            <div id="two" class="surface">
+                    <p class="dot"></p>
+                    <p class="dot"></p>
+            </div>
+            <div id="three" class="surface">
+                    <p class="dot"></p>
+                    <p class="dot"></p>
+                    <p class="dot"></p>
+            </div>
+            <div id="four" class="surface">
+                <div class="column">
+                    <p class="dot"></p>
+                    <p class="dot"></p>
+                </div>
+                <div class="column">
+                    <p class="dot"></p>
+                    <p class="dot"></p>
+                </div>
+            </div>
+            <div id="five" class="surface">
+                <div class="column">
+                    <p class="dot"></p>
+                    <p class="dot"></p>
+                </div>
+                <div class="column">
+                    <p class="dot"></p>
+                </div>
+                <div class="column">
+                    <p class="dot"></p>
+                    <p class="dot"></p>
+                </div>
+            </div>
+            <div id="six" class="surface">
+                <div class="column">
+                    <p class="dot"></p>
+                    <p class="dot"></p>
+                </div>
+                <div class="column">   
+                    <p class="dot"></p>
+                    <p class="dot"></p>
+                </div>
+                <div class="column">
+                    <p class="dot"></p>
+                    <p class="dot"></p>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
