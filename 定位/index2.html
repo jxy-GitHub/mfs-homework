@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>课程分享</title>
+    <style>
+        body {
+            margin: 0;
+        }
+        
+        .header {
+            height: 48px;
+            width: 100%;
+            background: #ffe502;
+            position: fixed;
+            top: 0px;
+            left: 0px;
+            z-index: 1;
+        }
+        
+        .container {
+            margin: 0;
+            height: 800px;
+            background:antiquewhite;
+            position: relative;
+            top: 30px;
+        }
+        
+        .h3-head {
+            padding: 200px 30px;
+            height: 200px;
+            position: relative;
+        }
+        
+        .box {
+            background: antiquewhite;
+            border: 1px solid black;
+            border-radius: 10px;
+            width: 160px;
+            height: 61px;
+            padding: 20px 30px;
+            margin: 0 auto;
+            position: absolute;
+            top: 24%;
+            left: 43%
+        }
+        
+        #EN {
+            font-size: 13px;
+            padding: 0;
+            margin: auto auto;
+            display: block;
+            width: 110px;
+            font-weight: 500;
+        }
+        
+        #CN {
+            font-size: 27px;
+            padding: 0;
+            margin: auto auto;
+            display: block;
+            width: 113px;
+            font-weight: 500;
+        }
+        
+        .cycle {
+            padding: 0;
+            margin: 0;
+            border: 1px solid #ffe502;
+            background: #ffe502;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            position: absolute;
+            top: 30px;
+            left: -20px;
+        }
+        
+        .triangle {
+            padding: 0;
+            margin: 0;
+            width: 0;
+            height: 0;
+            border-right: 20px solid #ffe502;
+            border-top: 20px solid transparent;
+            border-bottom: 20px solid transparent;
+            border-left: 20px solid transparent;
+            transform: rotate(-16deg);
+            position: absolute;
+            top: -15px;
+            left: 154px;
+        }
+        
+        .footer {
+            height: 200px;
+            background:rgba(0, 0, 0, 0.85);
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header"></header>
+    <div class="container">
+        <h3 class="h3-head">
+            <div class="box">
+                <span id="EN">SHARED COURSE</span>
+                <span id="CN">课程分享</span>
+                <div class="cycle"></div>
+                <div class="triangle"></div>
+            </div>
+        </h3>
+    </div>
+    <footer class="footer">
+    </footer>
+
+</body>
+
+</html
