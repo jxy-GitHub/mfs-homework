@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>完全居中</title>
+    <style>
+        .container{
+            height: 100px;
+            margin: 10px;
+        }
+        /*方法一*/
+        .container:nth-child(1){
+            background: blanchedalmond;
+            text-align: center;
+        }
+        .item1{
+           
+            line-height: 100px;
+        }
+        /*方法二*/
+        .container:nth-child(2){
+            background: powderblue;
+           
+        }
+        .item2{
+            line-height: 100px;
+            width: 80px;
+            margin: auto;
+        }
+        /*方法三*/
+        .container:nth-child(3){
+            background: thistle;
+            display:flex;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="item1">
+            this is item
+        </div>
+    </div>
+    <div class="container">
+        <div class="item2">
+            this is item
+        </div>
+    </div>
+    <div class="container">
+        <div class="item3">
+            this is item
+        </div>
+    </div>
+
+</body>
+
+</html>
