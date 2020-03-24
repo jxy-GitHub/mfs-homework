@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="toptext">
+            <div id="award">点击“开始“按钮，开始抽奖！</div>
+        </div>
+        <div class="action">
+            <button id="start">开 始</button>
+            <button id="stop">停 止</button>
+        </div>
+    </div>
+    <script>
+        function random() {
+            var m;
+            var ran = Math.trunc(Math.random() * 100); //产生0 -99的随机数
+            if (ran ==0) m = 0;
+            else if (ran > 0 && ran <= 10) m = 1;
+            else if (ran > 10 && ran <= 40) m = 2;
+            else if (ran >= 41 && ran <= 80) m = 3;
+            else if (ran >= 81 && ran < 100) m = 4;
+            return m;
+        }
+        var content = document.getElementById("award");
+
+        function award() {
+            var choose = random();
+            switch (choose) {
+                case 0:
+                    content.innerHTML = "特等奖！";
+                    break;
+                case 1:
+                    content.innerHTML = "一等奖！";
+                    break;
+                case 2:
+                    content.innerHTML = "二等奖！";
+                    break;
+                case 3:
+                    content.innerHTML = "三等奖！";
+                    break;
+                case 4:
+                    content.innerHTML = "鼓励奖！";
+                    break;
+            }
+        }
+
+        var oStar = document.getElementById("start");
+        var oStop = document.getElementById("stop");
+        var go;
+        var once = 0;
+        oStar.onclick = function getAward() {
+            if (once == 0) {
+                go = setInterval(award, 100);
+                once = 1;
+            }
+
+        };
+        oStop.onclick = function stop() {
+            clearInterval(go);
+            once = 0;
+        };
+    </script>
+</body>
+</html>
