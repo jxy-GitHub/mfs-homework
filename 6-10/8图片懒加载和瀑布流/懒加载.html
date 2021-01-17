@@ -71,7 +71,6 @@
     var scrollTop = document.documentElement.scrollTop || document.body.scrollTop || window.pageYOffset;
 
     for (var i = 0; i < images.length; i++) {
-      // 这里使用立即执行函数，支持ES6的环境可以直接使用let i = 0，具体原因可自行百度立即执行函数
       (function (i) {
         // 2.2 获取图片距离视图窗口顶部的距离
         var imageToTop = images[i].offsetTop;
