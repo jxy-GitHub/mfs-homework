@@ -1,0 +1,44 @@
+<!--请使用属性绑定实现一个 <img>的src属性每隔1s自动变换，以实现图片自动切换。-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>img</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <img :src="url[index]" />
+    </div>
+    <script>
+        var app = new Vue({
+            el: "#app",
+            data: function () {
+                return {
+                    url: [
+                        "https://www.google.com/images/branding/googlelogo/2x/googlelogo_color_272x92dp.png",
+                        "https://www.baidu.com/img/PCtm_d9c8750bed0b3c7d089fa7d55720d6cf.png",
+
+                    ],
+                    index: 0
+                }
+            },
+            methods: {
+                changeImg() {
+                    setInterval(() => {
+                        this.index = this.index > 0 ? 0 : 1
+                    }, 1000)
+                },
+            },
+            created: function () {
+                this.changeImg()
+            }
+        })
+    </script>
+</body>
+
+</html>
