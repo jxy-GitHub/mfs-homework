@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>动态输出</title>
+</head>
+
+<body>
+    <div id="container">
+
+    </div>
+</body>
+<script>
+    var listcnt = ['码蜂社', '前端', '教程'];
+    var ulitem = document.createElement("ul");
+    for (let i = 0; i < 3; i++) {
+        let item = document.createElement("li");
+        item.innerText = listcnt[i];
+        ulitem.appendChild(item);
+    }
+    document.getElementById("container").appendChild(ulitem);
+</script>
+
+</html>

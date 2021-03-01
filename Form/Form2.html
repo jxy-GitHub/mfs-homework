@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>form2</title>
+    </head>
+
+    <body>
+        <form action="/upInfo" enctype="multipart/form-data" method="post">
+        <div>
+            用户名：<input type="text" name="username" placeholder="请输入用户名"/>
+        </div>
+        <div>
+            工号：<input type="number" name="ID" placeholder="必须是介于0到100间的偶数" pattern="^\d*[02468]$" min="0" max="100" step="2"/>
+        </div>
+        <div>
+            密码：<input type="password" name="password" placeholder="请输入密码"/>
+        </div>
+        <div>
+            邮箱：<input type="email" name="email" placeholder="邮箱格式需符合规范"/>
+        </div>
+        <div>
+            出生日期：<input type="datetime-local" name="datetime"/>
+        </div>
+        <div>
+            性别选择：男<input type="radio" name="sex"value="1"/>女<input type="radio"name="sex" value="2"/>
+        </div>
+        <div>
+            技能：HTML<input type="checkbox" value="html"/>CSS<input type="checkbox" value="CSS"/>JavaScript<input type="checkbox" value="JavaScript"/>
+        </div>
+        <div>
+                所在城市：
+                <input list="city">
+                 <datalist id="city">
+                    <option></option>
+                    <option value="北京">北京</option>
+                    <option value="上海">上海</option>
+                    <option value="广州">广州</option>
+                    <option value="深圳">深圳</option>
+                 </datalist>
+        </div>
+        <div>
+            个人简历：<input type="file" name="file"/>
+        </div>
+        <div><input type="reset">&emsp;<input type="submit"></div>
+        </form>
+    </body>
+</html>

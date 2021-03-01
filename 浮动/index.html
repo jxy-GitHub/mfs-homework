@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>浮动</title>
+    <style>
+        #container {
+            position: absolute;
+            background-image: url('index.png');
+            background-size: cover;
+            height: 100%;
+            width: 100%;
+        }
+        nav {
+            margin-top: 20px;
+        }
+        nav div:nth-of-type(1) {
+            margin: 0 auto;
+            width: 60%;
+            color: white;
+            height: 50px;
+        }
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        #logo, #list {
+            float: left;
+            line-height: 50px;
+        }
+        #login {
+            float: right;
+            line-height: 50px;
+        }
+        #login:after {
+            content: "";
+            display: block;
+            height: 0;
+            visibility: hidden;
+            clear: both;
+        }
+        #list span {
+            margin-left: 4%;
+        }
+        #login span {
+            margin-left: 6%;
+        }
+        span:hover, ol:hover {
+            cursor: pointer;
+            color: lightgray;
+            transition: all .25s;
+        }
+        ol {
+            list-style-type: none;
+            display: inline-block;
+            margin-left: 6%;
+            position: relative;
+        }
+        li {
+            display: none;
+        }
+        ol:hover .item0 {
+            position: absolute;
+            display: list-item;
+            top: 30px;
+        }
+        ol:hover .item1 {
+            position: absolute;
+            display: list-item;
+            width: 100px;
+            top: 60px;
+        }
+    </style>
+</head>
+<body>
+<div id="container">
+    <nav>
+        <div>
+            <div id="logo" style="width: 10%">
+                <span>码蜂社</span>
+            </div>
+            <div id="list" style="width: 70%">
+                <span>首页</span>
+                <span>基础闯关班</span>
+                <span>Web闯关班</span>
+                <span>课程选择</span>
+                <ol>社区
+                    <li class="item0">论坛</li>
+                    <li class="item1">闯关任务</li>
+                </ol>
+                <span>关于我们</span>
+            </div>
+            <div id="login" style="width: 20%">
+                <span>登陆</span>
+                <span>注册</span>
+            </div>
+        </div>
+    </nav>
+</div>
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Dom事件绑定</title>
+    <style>
+        .footer {
+            max-width: 800px;
+            margin: 0 auto 3px;
+            background-color: rgb(219, 183, 212);
+            display: flex;
+            justify-content: space-around;
+        }
+        
+        .footer .menue {
+            font-size: 30px;
+        }
+        
+        .container {
+            min-height: 100px;
+            max-width: 800px;
+            margin: 0 auto 10px;
+            background-color: rgb(243, 223, 232);
+        }
+        
+        .container div {
+            padding: 8px;
+            font-size: 18px;
+        }
+        
+        .hidden {
+            display: none;
+        }
+        
+    </style>
+   
+</head>
+<body>
+    <footer class="footer">
+        <div class="menue">标签A</div>
+        <div class="menue">标签B</div>
+    </footer>
+    <div class="container">
+        <div>……这里是标签A里的内容……</div>
+        <div>……这里是标签B里的内容……</div>
+    </div> 
+    <script>
+       var tables=document.getElementsByClassName("menue");
+       var text=document.querySelectorAll(".container div");
+       for (var i=0;i<tables.length;i++){
+           (function(i){
+               tables[i].onclick=function(){
+                   for (var j=0;j<text.length;j++){
+                       text[j].className="hidden";
+                   }
+                   text[i].className="";
+               }
+           })(i)
+       }
+       for(var j=0;j<text.length;j++){
+           text[j].className="hidden";
+       }
+       text[0].className="";
+    </script>
+</body>
+</html>

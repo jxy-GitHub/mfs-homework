@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # my-router
 
 > A Vue.js project
@@ -28,3 +29,8 @@ npm test
 ```
 
 For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
+=======
+# jxy的作业库
+> 码蜂社 前端基础班 作业答题库
+>**码蜂社和jxy版权所有，转载请注明出处**
+>>>>>>> aae713ce4ce96c2829366e347e5e42149ab920b2

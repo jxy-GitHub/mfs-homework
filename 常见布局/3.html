@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>flex布局实现圣杯布局</title>
+    <style>
+        .header,
+        .footer {
+            height: 100px;
+            width: 100%;
+            background: rgb(211, 214, 181);
+        }
+
+        .container {
+            display: flex
+        }
+
+        .middle {
+            flex: 1;
+            height: 200px;
+            background: rgb(233, 201, 163);
+
+        }
+
+        .left {
+            flex: 0 0 200px;
+            background: rgb(167, 134, 94);
+            order: -1;
+        }
+
+        .right {
+            flex: 0 0 300px;
+            background: rgb(207, 156, 92);
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">这是头部</div>
+    <div class="container">
+        <div class="middle">中间</div>
+        <div class="left">左边</div>
+        <div class="right">右边</div>
+    </div>
+    <div class="footer">这是底部</div>
+</body>
+
+</html>

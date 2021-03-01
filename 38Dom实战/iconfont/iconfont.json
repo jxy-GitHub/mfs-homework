@@ -1,0 +1,30 @@
+{
+  "id": "",
+  "name": "",
+  "font_family": "iconfont",
+  "css_prefix_text": "icon-",
+  "description": "",
+  "glyphs": [
+    {
+      "icon_id": "4735281",
+      "name": "icon_回复2-面",
+      "font_class": "icon_huifu-mian",
+      "unicode": "e63a",
+      "unicode_decimal": 58938
+    },
+    {
+      "icon_id": "6186635",
+      "name": "关注",
+      "font_class": "guanzhu",
+      "unicode": "e65b",
+      "unicode_decimal": 58971
+    },
+    {
+      "icon_id": "11520233",
+      "name": "笑脸",
+      "font_class": "xiaolian",
+      "unicode": "e75a",
+      "unicode_decimal": 59226
+    }
+  ]
+}

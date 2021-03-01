@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>前端翻页</title>
+    <link rel="stylesheet" href="./iconfont/iconfont.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="banner"></div>
+    <div id="list" class="list"></div>
+    <div class="pager" id="pager">
+
+    </div>
+
+    <script>
+        // 自动生成item的函数
+        function creatItem(no, title, clickTimes, replyTimes) {
+            var dom = document.createElement("div");
+            dom.setAttribute("class", "item");
+            var html = '<div class="no">' + no + '</div>' +
+                '<div class="title">' + title + '</div><div class="info">' +
+                '<span class=" iconfont icon-guanzhu">' + clickTimes + '</span>' +
+                '<span class=" iconfont icon-icon_huifu-mian">' + replyTimes + '</span></div>' +
+                '<div class="iconfont icon-xiaolian xiaolian"></div>';
+            dom.innerHTML = html;
+            return dom;
+        }
+
+        //data数组
+        var data = [];
+        for (i = 0; i < 100; i++) {
+            data.push({ no: i, title: '标题' + i, clickTimes: 10 * i, replyTimes: i })
+        }
+        //获取每一页data的函数
+        function getData(page) {
+            return data.slice(page * 12, page * 12 + 12)
+        }
+
+        //添加item的函数
+        var olist = document.getElementById("list");
+        function fillDom(page) {
+
+            while (olist.hasChildNodes()) {
+                olist.removeChild(olist.lastChild);
+            }
+
+            var data = getData(page);
+            var doms = data.map(function (i) {
+                return creatItem(i.no, i.title, i.clickTimes, i.replyTimes)
+            })
+            doms.forEach(function (i) {
+                olist.appendChild(i)
+            })
+        }
+        fillDom(0);
+
+        //自动生成page的函数
+        function createPager(noPage) {
+            var dom2 = document.createElement("a");
+            dom2.setAttribute("href", "#");
+            dom2.innerHTML = noPage;
+            return dom2;
+        }
+
+        d = data.length;
+        var maxNoPage = d / 12;
+        var opager = document.getElementById("pager");
+
+        //生成页码
+        for (i = 0; i < maxNoPage; i++) {
+            opager.appendChild(createPager(i + 1));
+        }
+
+        //点击不同页码，获取不同的item
+        var pages = document.querySelectorAll("a");
+        for (let i = 0; i < pages.length; i++) {
+            pages[i].addEventListener("click", function () {
+                fillDom(i);
+                for (j = 0; j < pages.length; j++) {
+                    pages[j].className = "white";
+                }
+                pages[i].className = "red";
+            })
+        }
+
+    </script>
+</body>
+
+</html>

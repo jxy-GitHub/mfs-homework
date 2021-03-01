@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>数据类型</title>
+</head>
+
+<body>
+    <script>
+        var a = [];
+        a[0] = +"1.0";
+        a[1] = +"2";
+        a[2] = +"str";
+        a[3] = parseInt(true);
+        a[4] = parseInt([]);
+        a[5] = parseInt([1, 2, 3]);
+        a[6] = parseInt({});
+        a[7] = parseInt({
+            a: 1
+        });
+        a[8] = parseInt(function() {});
+        for (var i = 0; i < 9; i++) {
+            document.write("<p>" + a[i] + "</p>");
+        }
+    </script>
+    <script>
+        var a = [];
+        a[0] = !!"1";
+        a[1] = !!"str";
+        a[2] = !!1;
+        a[3] = !!0;
+        a[4] = !![];
+        a[5] = !![1, 2, 3];
+        a[6] = !!{};
+        a[7] = !!{
+            a: 1
+        };
+        a[8] = !! function() {};
+        for (var i = 0; i < 9; i++) {
+            document.write("<p>" + a[i] + "</p>");
+        }
+    </script>
+    <script>
+        obj = {
+            a: 1,
+            b: "2",
+            c: true
+        };
+        alert(obj.a + obj.b + obj.c);
+    </script>
+</body>
+
+</html>

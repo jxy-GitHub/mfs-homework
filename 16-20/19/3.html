@@ -1,0 +1,31 @@
+<!--请实现 filter uppercase 实现将输入字符串转化为大写形式,并在模板中使用这个 filter-->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>filters</title>
+<script src="https://cdn.staticfile.org/vue/2.2.2/vue.min.js"></script>
+</head>
+<body>
+<div id="app">
+    <input v-model="message">
+  {{ message | capitalize }}
+</div>
+	
+<script>
+new Vue({
+  el: '#app',
+  data: {
+	message: '请输入'
+  },
+  filters: {
+    capitalize: function (value) {
+      if (!value) return ''
+      value = value.toString()
+      return value.toUpperCase() 
+    }
+  }
+})
+</script>
+</body>
+</html>

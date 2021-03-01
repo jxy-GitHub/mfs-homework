@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>购物车</title>
+    <style>
+        #shop{
+            display: flex;
+        }
+        #item1,#item2{
+            height: 100px;
+            width: 100px;
+            background-color: #7c646e71;
+            margin: 10px;
+            border-radius: 10px;
+            position: relative;
+        }
+        #car{
+            display: flex;
+            height:120px;
+            background-color: rosybrown;
+            border-radius: 18px;
+        }
+        button{
+            position: absolute;
+            bottom: 0px;
+            left: 0;
+            right: 0;
+            margin: 0 auto;
+            border-radius: 5px;
+           width: 100px;
+        }
+        #goods{
+            position: absolute;
+            top:15px;
+            left: 0;
+            right: 0;
+            margin: 0 auto;
+            text-align: center;
+        }
+       
+    </style>
+</head>
+
+<body>
+    <div id="shop"></div>
+    <div id="car"></div>
+    <script>
+
+        //在shop添加商品
+        function createGoods(no) {
+            var goods = document.createElement("div");
+            goods.setAttribute("id", "item1");
+            goods.innerHTML = '<div id="goods">商品' + (no+1)+ '</div><button>添加购物车</button>';
+            return goods;
+        }
+        var oshop = document.getElementById("shop");
+        for (i = 0; i < 8; i++) {
+            oshop.appendChild(createGoods(i));
+        }
+
+        //在购物车添加商品的函数
+        function createCarGoods(no) {
+            var goods = document.createElement("div");
+            goods.setAttribute("id", "item2");
+            goods.innerHTML = '<div id="goods">商品' + (no+1) + '<div id="cont' + no + '">数量：1</div>' + '</div><button id="del' + no + '">删除</button>';
+            return goods;
+        }
+
+        var btns = document.querySelectorAll("button");
+        var ocar = document.getElementById("car");
+        var ogoods = document.getElementById("goods");
+        var ocont = new Array();
+
+        if (performance.navigation.type == 1) {
+            console.info("This page is reloaded");
+            var myStr = localStorage.getItem("key");
+            var substrArray = myStr.split(",");
+            for (i = 0; i < substrArray.length; i++) {
+                substrArray[i] = +substrArray[i];
+            }
+            var cont = substrArray;
+
+            ocar.innerHTML = document.cookie;
+            var dels = new Array();
+            var del2 = new Array();
+            var x = document.cookie;
+            var b = x.split("</button></div>");
+            for (let i = 0; i < b.length - 1; i++) {
+                del2[i] = "del" + b[i].charAt(34);
+                dels.push(document.getElementById(del2[i]));
+                console.log("2");
+                dels[i].addEventListener("click", function () {
+                    var a = dels[i].parentNode;//获得所点击删除键的父元素
+                    a.remove();//删除此元素
+
+                    cont[b[i].charAt(34)] = 0;//将此元素的数量写为0
+                    localStorage.setItem('key', cont);
+                    document.cookie = ocar.innerHTML;
+                    console.log("1")
+                })
+
+            }
+
+        } else {
+            console.info("This page is not reloaded");
+            var cont = [0, 0, 0, 0, 0, 0, 0, 0, 0];
+            var dels = new Array();
+        }
+
+        for (let i = 0; i < btns.length; i++) {
+
+            //监听添加按钮
+            btns[i].addEventListener("click", function () {
+                cont[i] = cont[i] + 1;//刷新点击按钮的次数
+                localStorage.setItem('key', cont);
+                if (cont[i] == 1) {
+                    ocar.appendChild(createCarGoods(i));//在购物车添加商品
+                    var del = "del" + i;
+                    dels.push(document.getElementById(del));//在dels中添加相应的删除键
+                }
+
+                if (cont[i] > 1) {
+                    var co = "cont" + i;
+                    ocont[i] = document.getElementById(co);
+                    ocont[i].innerText = "数量：" + cont[i];//将数量修改为点击次数
+                }
+                document.cookie = ocar.innerHTML;//将购物车内数据写入cookie
+
+
+                for (let j = 0; j < dels.length; j++) {
+                    dels[j].addEventListener("click", function () {
+                        var a = dels[j].parentNode;//获得所点击删除键的父元素
+                        a.remove();//删除此元素
+
+                        cont[i] = 0;//将此元素的数量写为0
+                        localStorage.setItem('key', cont);
+                        document.cookie = ocar.innerHTML;
+                        
+                    })
+                }
+               
+            })
+        }
+    </script>
+</body>
+
+</html>

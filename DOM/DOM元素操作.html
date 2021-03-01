@@ -1,0 +1,27 @@
+<script>
+   window.onload= function ()
+   {
+        var oBtn=document.getElementById('btn1');
+        var oUl=document.getElementById('list');
+        var ali=document.getElementsByTagName('li');
+        oBtn.onclick=function ()
+        {
+            var Li1=document.createElement('li');
+            Li1.innerHTML=1;
+            oUl.appendChild(Li1);
+            var Li2=document.createElement('li');
+            Li2.innerHTML=2;
+            oUl.appendChild(Li2);
+        }
+
+
+}
+</script>
+</head>
+
+<body>
+   <div id="divId">
+   <input type="button" id="btn1" value="创建 li"/>
+   <ul id="list"></ul>
+   </div>
+</body>
